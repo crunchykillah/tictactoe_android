@@ -19,8 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TicTacToe extends AppCompatActivity {
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9;
-    String krestik;
-    String nolik;
+    String krestik, nolik;
     TextView textView, humanPoints, computerPoints, restart;
     int humanPointsCounter, computerPointsCounter;
     MediaPlayer backgroundMusic, buttonClickSound;
@@ -103,153 +102,30 @@ public class TicTacToe extends AppCompatActivity {
     private void hodPC() {
         Random random = new Random();
         int clickPC = random.nextInt(9) + 1;
-        switch (clickPC) {
-            case (1): if (button1.getText() == "" ) {
-                button1.setText(nolik);
-                button1.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (2): if (button2.getText() == "") {
-                button2.setText(nolik);
-                button2.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (3): if (button3.getText() == "") {
-                button3.setText(nolik);
-                button3.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (4): if (button4.getText() == "") {
-                button4.setText(nolik);
-                button4.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (5): if (button5.getText() == "") {
-                button5.setText(nolik);
-                button5.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (6): if (button6.getText() == "") {
-                button6.setText(nolik);
-                button6.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (7): if (button7.getText() == "") {
-                button7.setText(nolik);
-                button7.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (8): if (button8.getText() == "") {
-                button8.setText(nolik);
-                button8.setBackgroundResource(R.drawable.o_button_grey);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
-            case (9): if (button9.getText() == "") {
-                button9.setBackgroundResource(R.drawable.o_button_grey);
-                button9.setText(nolik);
-                isComputerWinner();
-            } else { hodPC();}
-                break;
+        Button[] buttons = {button1, button2, button3, button4, button5, button6, button7, button8, button9};
+        Button currentButton = buttons[clickPC - 1];
+
+        if (currentButton.getText().equals("")) {
+            currentButton.setText(nolik);
+            currentButton.setBackgroundResource(R.drawable.o_button_grey);
+            isComputerWinner();
+        } else {
+            hodPC();
         }
     }
-    public void clickBtn1(View view) {
-        if (button1.getText() == "" && textView.getText() == "") {
-            button1.setText(krestik);
-            button1.setBackgroundResource(R.drawable.x_button_grey);
+
+    public void onClickBtn(View view) {
+        Button button = (Button) view;
+        if (button.getText().equals("") && textView.getText().equals("")) {
+            button.setText(krestik);
+            button.setBackgroundResource(R.drawable.x_button_grey);
             isPlayerWinner();
-            if (textView.getText() == ""){
+            if (textView.getText().equals("")) {
                 hodPC();
             }
         }
     }
-    public void clickBtn2(View view) {
-        if (button2.getText() == "" && textView.getText() == "") {
-            button2.setText(krestik);
-            button2.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
-    public void clickBtn3(View view) {
-        if (button3.getText() == "" && textView.getText() == "") {
-            button3.setText(krestik);
-            button3.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
-    public void clickBtn4(View view) {
-        if (button4.getText() == "" && textView.getText() == "") {
-            button4.setText(krestik);
-            button4.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
-    public void clickBtn5(View view) {
-        if (button5.getText() == "" && textView.getText() == "") {
-            button5.setText(krestik);
-            button5.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
-    public void clickBtn6(View view) {
-        if (button6.getText() == "" && textView.getText() == "") {
-            button6.setText(krestik);
-            button6.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
-    public void clickBtn7(View view) {
-        if (button7.getText() == "" && textView.getText() == "") {
-            button7.setText(krestik);
-            button7.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
-    public void clickBtn8(View view) {
-        if (button8.getText() == "" && textView.getText() == "") {
-            button8.setText(krestik);
-            button8.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
-    public void clickBtn9(View view) {
-        if (button9.getText() == "" && textView.getText() == "") {
-            button9.setText(krestik);
-            button9.setBackgroundResource(R.drawable.x_button_grey);
-            isPlayerWinner();
-            if (textView.getText() == ""){
-                hodPC();
-            }
-        }
-    }
+
     //Условия выигрыша
     @SuppressLint("ResourceAsColor")
     public void isPlayerWinner() {

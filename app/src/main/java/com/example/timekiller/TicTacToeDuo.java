@@ -98,121 +98,20 @@ public class TicTacToeDuo extends AppCompatActivity {
         }
         buttonClickSound.start();
     }
-    public void clickBtn1(View view) {
-        if (button1.getText() == "" && textView.getText() == "" && click == nolik) {
-            button1.setBackgroundResource(R.drawable.x_button_grey);
-            button1.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button1.getText() == "" && textView.getText() == "" && click == krestik) {
-            button1.setBackgroundResource(R.drawable.o_button_grey);
-            button1.setText(nolik);
-            click = nolik;
-            isSecondPlayerWinner();
-        }
-    }
-    public void clickBtn2(View view) {
-        if (button2.getText() == "" && textView.getText() == "" && click == nolik) {
-            button2.setBackgroundResource(R.drawable.x_button_grey);
-            button2.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button2.getText() == "" && textView.getText() == "" && click == krestik) {
-            button2.setBackgroundResource(R.drawable.o_button_grey);
-            button2.setText(nolik);
-            click = nolik;
-            isSecondPlayerWinner();
-        }
-    }
-    public void clickBtn3(View view) {
-        if (button3.getText() == "" && textView.getText() == "" && click == nolik) {
-            button3.setBackgroundResource(R.drawable.x_button_grey);
-            button3.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button3.getText() == "" && textView.getText() == "" && click == krestik) {
-            button3.setBackgroundResource(R.drawable.o_button_grey);
-            button3.setText(nolik);
-            isSecondPlayerWinner();
-            click = nolik;
-        }
-    }
-    public void clickBtn4(View view) {
-        if (button4.getText() == "" && textView.getText() == "" && click == nolik) {
-            button4.setBackgroundResource(R.drawable.x_button_grey);
-            button4.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button4.getText() == "" && textView.getText() == "" && click == krestik) {
-            button4.setBackgroundResource(R.drawable.o_button_grey);
-            button4.setText(nolik);
-            isSecondPlayerWinner();
-            click = nolik;
-        }
-    }
-    public void clickBtn5(View view) {
-        if (button5.getText() == "" && textView.getText() == "" && click == nolik) {
-            button5.setBackgroundResource(R.drawable.x_button_grey);
-            button5.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button5.getText() == "" && textView.getText() == "" && click == krestik) {
-            button5.setBackgroundResource(R.drawable.o_button_grey);
-            button5.setText(nolik);
-            isSecondPlayerWinner();
-            click = nolik;
-        }
-    }
-    public void clickBtn6(View view) {
-        if (button6.getText() == "" && textView.getText() == "" && click == nolik) {
-            button6.setBackgroundResource(R.drawable.x_button_grey);
-            button6.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button6.getText() == "" && textView.getText() == "" && click == krestik) {
-            button6.setBackgroundResource(R.drawable.o_button_grey);
-            button6.setText(nolik);
-            isSecondPlayerWinner();
-            click = nolik;
-        }
-    }
-    public void clickBtn7(View view) {
-        if (button7.getText() == "" && textView.getText() == "" && click == nolik) {
-            button7.setBackgroundResource(R.drawable.x_button_grey);
-            button7.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button7.getText() == "" && textView.getText() == "" && click == krestik) {
-            button7.setBackgroundResource(R.drawable.o_button_grey);
-            button7.setText(nolik);
-            isSecondPlayerWinner();
-            click = nolik ;
-        }
-    }
-    public void clickBtn8(View view) {
-        if (button8.getText() == "" && textView.getText() == "" && click == nolik) {
-            button8.setBackgroundResource(R.drawable.x_button_grey);
-            button8.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button8.getText() == "" && textView.getText() == "" && click == krestik) {
-            button8.setBackgroundResource(R.drawable.o_button_grey);
-            button8.setText(nolik);
-            isSecondPlayerWinner();
-            click = nolik;
-        }
-    }
-    public void clickBtn9(View view) {
-        if (button9.getText() == "" && textView.getText() == "" && click == nolik) {
-            button9.setBackgroundResource(R.drawable.x_button_grey);
-            button9.setText(krestik);
-            isPlayerWinner();
-            click = krestik;
-        }else if (button9.getText() == "" && textView.getText() == "" && click == krestik) {
-            button9.setBackgroundResource(R.drawable.o_button_grey);
-            button9.setText(nolik);
-            isSecondPlayerWinner();
-            click = nolik;
+    public void onClickBtn(View view) {
+        Button button = (Button) view;
+        if (button.getText().equals("") && textView.getText().equals("")) {
+            if (click == nolik) {
+                button.setBackgroundResource(R.drawable.x_button_grey);
+                button.setText(krestik);
+                isPlayerWinner();
+                click = krestik;
+            } else if (click == krestik) {
+                button.setBackgroundResource(R.drawable.o_button_grey);
+                button.setText(nolik);
+                isSecondPlayerWinner();
+                click = nolik;
+            }
         }
     }
     //Условия выигрыша
